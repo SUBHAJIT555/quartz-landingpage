@@ -20,7 +20,7 @@ const cards = [
     title: "Economic Data",
     time: "02:30 PM",
     content:
-      "🇺🇸 CPI came in at 3.2% vs 3.4% expected. Core MoM 0.2%. Dovish repricing underway — DXY breaking below 104.20. Gold bid.",
+      "🇺🇸 CPI came in at 3.2% vs 3.4% expected. Core MoM 0.2%. Dovish repricing underway -DXY breaking below 104.20. Gold bid.",
     image:
       "https://images.pexels.com/photos/7688460/pexels-photo-7688460.jpeg?auto=compress&cs=tinysrgb&w=1400",
     alt: "Economic charts and macro analysis",
@@ -29,7 +29,7 @@ const cards = [
     title: "Technical Setup",
     time: "09:45 AM",
     content:
-      "EUR/USD — Daily OB tapped at 1.0720. H4 BOS confirmed. Waiting for LTF entry on London open. Targets: 1.0780 / 1.0830.",
+      "EUR/USD -Daily OB tapped at 1.0720. H4 BOS confirmed. Waiting for LTF entry on London open. Targets: 1.0780 / 1.0830.",
     image:
       "https://images.pexels.com/photos/6801874/pexels-photo-6801874.jpeg?auto=compress&cs=tinysrgb&w=1400",
     alt: "Technical chart analysis on trading screens",

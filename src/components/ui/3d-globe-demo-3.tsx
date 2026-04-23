@@ -92,7 +92,7 @@ export default function Globe3DDemoThird() {
           <ShinyText text="This Is Not For Everyone." disabled={false} speed={3} />
         </h2>
         <p className="mt-2 max-w-sm text-balance text-neutral-600 sm:max-w-lg md:mt-8 md:text-lg">
-        We built Quartz for the focused few — traders and investors who want clarity, not clutter. If you're ready to see the market through a sharper lens, we're ready for you.
+        We built Quartz for the focused few -traders and investors who want clarity, not clutter. If you're ready to see the market through a sharper lens, we're ready for you.
         </p>
 
         <div className="mt-4 flex flex-wrap gap-3 md:mt-8 md:gap-4">

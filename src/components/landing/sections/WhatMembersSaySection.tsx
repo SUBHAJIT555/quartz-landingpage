@@ -33,7 +33,7 @@ const testimonials: Testimonial[] = [
     role: "Swing Trader",
   },
   {
-    text: "Signals are precise and easy to follow. Entry, SL, TP — no noise, just clear actionable levels.",
+    text: "Signals are precise and easy to follow. Entry, SL, TP -no noise, just clear actionable levels.",
     image:
       "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&q=80&w=150&h=150",
     name: "Omar Raza",
@@ -137,7 +137,7 @@ function TestimonialsColumn({
 
 export function WhatMembersSaySection() {
   return (
-    <section id="member" className="scroll-mt-24 overflow-hidden bg-white py-24">
+    <section id="what-members-say" className="scroll-mt-24 overflow-hidden bg-white py-24">
       <Container className="max-w-7xl">
         <motion.div
           initial={{ opacity: 0, y: 36 }}
@@ -146,10 +146,10 @@ export function WhatMembersSaySection() {
           transition={{ duration: 0.75, ease: [0.16, 1, 0.3, 1] }}
         >
           <div className="mx-auto mb-14 max-w-2xl text-center">
-            <h2 className="text-4xl font-semibold tracking-tight text-zinc-900 md:text-5xl">
+            <h2 className="text-4xl font-bold tracking-tight text-zinc-900 md:text-5xl">
               What Members Say
             </h2>
-            <p className="mt-4 text-base leading-relaxed text-zinc-600 md:text-lg">
+            <p className="mt-4 text-base font-medium leading-relaxed text-zinc-600 md:text-lg">
               Real feedback from traders and analysts who use our daily
               intelligence to make faster, better-informed decisions.
             </p>

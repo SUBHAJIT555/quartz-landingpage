@@ -1,11 +1,13 @@
 "use client";
 
 import { useEffect, useRef, useState } from "react";
+import type { ReactNode } from "react";
 import { Container } from "@/components/shared/Container";
 import { motion } from "framer-motion";
+import ShinyText from "@/components/ui/ShinyText";
 
 type TrackEntry = {
-  icon: string;
+  icon: ReactNode;
   heading: string;
   paragraph: string;
   points: string[];
@@ -14,7 +16,18 @@ type TrackEntry = {
 
 const trackEntries: TrackEntry[] = [
   {
-    icon: "🌍",
+    icon: (
+      <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true" className="text-zinc-800">
+        <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+        <path d="M20.972 11.291a9 9 0 1 0 -8.322 9.686" />
+        <path d="M3.6 9h16.8" />
+        <path d="M3.6 15h8.9" />
+        <path d="M11.5 3a17 17 0 0 0 0 18" />
+        <path d="M12.5 3a16.986 16.986 0 0 1 2.578 9.018" />
+        <path d="M21.121 20.121a3 3 0 1 0 -4.242 0c.418 .419 1.125 1.045 2.121 1.879c1.051 -.89 1.759 -1.516 2.121 -1.879" />
+        <path d="M19 18v.01" />
+      </svg>
+    ),
     heading: "Geopolitical Pulse",
     paragraph:
       "Tracking sanctions, conflicts and policy shifts that move currencies before headlines catch up.",
@@ -26,10 +39,19 @@ const trackEntries: TrackEntry[] = [
     ],
   },
   {
-    icon: "📈",
+    icon: (
+      <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true" className="text-zinc-800">
+        <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+        <path d="M14 3v4a1 1 0 0 0 1 1h4" />
+        <path d="M17 21h-10a2 2 0 0 1 -2 -2v-14a2 2 0 0 1 2 -2h7l5 5v11a2 2 0 0 1 -2 2" />
+        <path d="M9 17l0 -5" />
+        <path d="M12 17l0 -1" />
+        <path d="M15 17l0 -3" />
+      </svg>
+    ),
     heading: "Economic Data Decoded",
     paragraph:
-      "CPI, NFP, PMI — we break down what the numbers actually mean for your positions.",
+      "CPI, NFP, PMI -we break down what the numbers actually mean for your positions.",
     image:
       "https://images.pexels.com/photos/6693656/pexels-photo-6693656.jpeg?auto=compress&cs=tinysrgb&w=1400",
     points: [
@@ -38,7 +60,12 @@ const trackEntries: TrackEntry[] = [
     ],
   },
   {
-    icon: "🧠",
+    icon: (
+      <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true" className="text-zinc-800">
+        <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+        <path d="M3 12h4l3 8l4 -16l3 8h4" />
+      </svg>
+    ),
     heading: "Multi-Indicator Analysis",
     paragraph:
       "Confluence-based setups using structure, momentum, volume and sentiment across timeframes.",
@@ -50,10 +77,17 @@ const trackEntries: TrackEntry[] = [
     ],
   },
   {
-    icon: "⚡",
+    icon: (
+      <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true" className="text-zinc-800">
+        <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+        <path d="M18.364 19.364a9 9 0 1 0 -12.728 0" />
+        <path d="M15.536 16.536a5 5 0 1 0 -7.072 0" />
+        <path d="M11 13a1 1 0 1 0 2 0a1 1 0 1 0 -2 0" />
+      </svg>
+    ),
     heading: "Live Market Signals",
     paragraph:
-      "Real-time alerts with clear entry, SL and TP levels — delivered directly to your device.",
+      "Real-time alerts with clear entry, SL and TP levels -delivered directly to your device.",
     image:
       "https://images.pexels.com/photos/6801648/pexels-photo-6801648.jpeg?auto=compress&cs=tinysrgb&w=1400",
     points: [
@@ -62,10 +96,19 @@ const trackEntries: TrackEntry[] = [
     ],
   },
   {
-    icon: "🗓️",
+    icon: (
+      <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true" className="text-zinc-800">
+        <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+        <path d="M4 7a2 2 0 0 1 2 -2h12a2 2 0 0 1 2 2v12a2 2 0 0 1 -2 2h-12a2 2 0 0 1 -2 -2l0 -12" />
+        <path d="M16 3l0 4" />
+        <path d="M8 3l0 4" />
+        <path d="M4 11l16 0" />
+        <path d="M8 15h2v2h-2l0 -2" />
+      </svg>
+    ),
     heading: "The Weekly Wrap",
     paragraph:
-      "Every Sunday — a full debrief of the week's moves and a roadmap for the week ahead.",
+      "Every Sunday -a full debrief of the week's moves and a roadmap for the week ahead.",
     image:
       "https://images.pexels.com/photos/7654125/pexels-photo-7654125.jpeg?auto=compress&cs=tinysrgb&w=1400",
     points: [
@@ -106,13 +149,13 @@ export function WhatWeTrackSection() {
   }, []);
 
   return (
-    <section id="what" className="scroll-mt-24 bg-white">
+    <section id="what-we-track" className="scroll-mt-12 bg-white">
       <Container className="max-w-7xl">
         <div className="w-full md:hidden">
-          <h2 className="text-3xl font-semibold tracking-tight text-zinc-900">
+          <h2 className="text-3xl font-bold tracking-tight text-zinc-900 md:text-5xl">
             What We Track
           </h2>
-          <p className="mt-3 text-base leading-relaxed text-zinc-600">
+          <p className="mt-3 text-base leading-relaxed font-medium text-zinc-600">
             Five pillars of intelligence delivered daily to our community.
           </p>
 
@@ -131,18 +174,22 @@ export function WhatWeTrackSection() {
                   />
                 </div>
                 <div className="flex items-center gap-3">
-                  <span className="inline-flex h-8 w-8 items-center justify-center rounded-md bg-white text-base">
+                  <span className="inline-flex h-8 w-8 items-center justify-center rounded-lg bg-zinc-100 border border-zinc-300 ring ring-zinc-200 ring-offset-2 shadow-md text-base">
                     {entry.icon}
                   </span>
-                  <h3 className="text-lg font-semibold text-zinc-900">{entry.heading}</h3>
+                  <h3 className="text-lg font-semibold text-zinc-900">
+                    <ShinyText text={entry.heading} speed={3} />
+                  </h3>
                 </div>
-                <p className="mt-3 text-sm leading-relaxed text-zinc-700">
+                <p className="mt-3 text-sm leading-relaxed text-zinc-700 font-medium">
                   {entry.paragraph}
                 </p>
+                <div className="h-px w-full bg-zinc-200 my-2"></div>
                 <ul className="mt-3 space-y-1.5">
                   {entry.points.map((point) => (
-                    <li key={point} className="text-xs text-zinc-600">
-                      • {point}
+                    <li key={point} className="flex items-start gap-2 text-sm font-medium text-zinc-600">
+                      <div className="mt-1 h-2 w-2 shrink-0 rounded bg-emerald-500 animate-pulse" />
+                      <span>{point}</span>
                     </li>
                   ))}
                 </ul>
@@ -153,10 +200,10 @@ export function WhatWeTrackSection() {
 
         <div className="hidden md:block">
           <div className="mx-auto max-w-2xl text-center">
-            <h2 className="text-4xl font-semibold tracking-tight text-zinc-900 md:text-5xl">
+            <h2 className="text-4xl font-bold tracking-tight text-zinc-900 md:text-5xl">
               What We Track
             </h2>
-            <p className="mt-4 text-lg leading-relaxed text-zinc-600">
+            <p className="mt-4 text-lg font-medium leading-relaxed text-zinc-600">
               Five pillars of intelligence delivered daily to our community.
             </p>
           </div>

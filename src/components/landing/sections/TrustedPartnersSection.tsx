@@ -3,8 +3,16 @@
 import { motion } from "framer-motion";
 import { Container } from "@/components/shared/Container";
 import GradientText from "@/components/ui/GradientText";
-import { FallingPattern } from "@/components/ui/falling-pattern";
 import Shuffle from "@/components/ui/Shuffle";
+import { Globe3D, type GlobeMarker } from "@/components/ui/3d-globe";
+
+const partnerGlobeMarkers: GlobeMarker[] = [
+  { lat: 25.2048, lng: 55.2708, src: "https://assets.aceternity.com/avatars/10.webp", label: "Dubai" },
+  { lat: 51.5074, lng: -0.1278, src: "https://assets.aceternity.com/avatars/2.webp", label: "London" },
+  { lat: 40.7128, lng: -74.006, src: "https://assets.aceternity.com/avatars/1.webp", label: "New York" },
+  { lat: 1.3521, lng: 103.8198, src: "https://assets.aceternity.com/avatars/12.webp", label: "Singapore" },
+  { lat: 35.6762, lng: 139.6503, src: "https://assets.aceternity.com/avatars/3.webp", label: "Tokyo" },
+];
 
 export function TrustedPartnersSection() {
   return (
@@ -139,20 +147,26 @@ export function TrustedPartnersSection() {
             </div>
 
             <div className="group relative overflow-hidden rounded-2xl border border-zinc-200 bg-white p-4 lg:col-span-6 md:p-7">
-              <FallingPattern
-                className="pointer-events-none absolute inset-0 z-0 p-0"
-                color="rgba(15,23,42,0.32)"
-                backgroundColor="rgba(255,255,255,0.82)"
-                duration={180}
-                blurIntensity="0.9em"
-                density={1}
-              />
-              <div className="pointer-events-none absolute -right-16 -top-16 h-36 w-36 rounded-full bg-zinc-900/10 blur-2xl" />
-              <div className="relative z-10 flex h-full min-h-80 flex-col justify-between">
+              <div className="relative z-10 flex h-full min-h-80 flex-col justify-between md:pr-44">
                 <p className="max-w-xs text-sm font-medium text-zinc-900">
                   Learn from sources operating at the highest level of
                   credibility and compliance.
                 </p>
+                <div className="relative mx-auto h-44 w-full max-w-xs md:absolute md:right-[-210px] md:top-1/2 md:h-[530px] md:w-[400px] md:max-w-none md:-translate-y-1/2">
+                  <Globe3D
+                    className="h-full w-full"
+                    markers={partnerGlobeMarkers}
+                    config={{
+                      atmosphereColor: "#4da6ff",
+                      atmosphereIntensity: 0,
+                      bumpScale: 2.1,
+                      autoRotateSpeed: 0.35,
+                      enableZoom: false,
+                      enablePan: false,
+                      showAtmosphere: true,
+                    }}
+                  />
+                </div>
                 <div>
                   <p className="text-[0.72rem] md:text-sm font-bold uppercase tracking-[0.16em] text-zinc-500">
                     <GradientText

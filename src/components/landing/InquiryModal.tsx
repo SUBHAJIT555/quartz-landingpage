@@ -2,6 +2,8 @@
 
 import Image from "next/image";
 import { useEffect, useState } from "react";
+import ShinyText from "@/components/ui/ShinyText";
+import { ShinyButton } from "@/components/ui/shiny-button";
 
 type InquiryForm = {
   fullName: string;
@@ -95,11 +97,11 @@ export function InquiryModal() {
 
   return (
     <div
-      className="fixed inset-0 z-60 flex items-center justify-center bg-black/55 p-4"
+      className="fixed inset-0 z-60 flex items-center justify-center bg-black/70 backdrop-blur-md p-4"
       onClick={closeModal}
     >
       <div
-        className="w-full max-w-lg rounded-2xl bg-white p-6 shadow-2xl"
+        className="w-full max-w-lg rounded-2xl bg-white p-6 shadow-2xl border border-zinc-300 ring ring-zinc-200 ring-offset-4 ring-offset-white"
         onClick={(event) => event.stopPropagation()}
       >
         <div className="mb-5 flex items-start justify-between">
@@ -110,15 +112,16 @@ export function InquiryModal() {
               width={140}
               height={32}
               className="h-8 w-auto"
+              style={{ width: "auto" }}
             />
-            <h3 className="mt-2 text-2xl font-semibold text-zinc-900">
-              Join the Inner Circle
+            <h3 className="mt-2 text-2xl md:text-4xl font-bold text-zinc-900">
+              <ShinyText text="Join the Inner Circle" speed={3} />
             </h3>
           </div>
           <button
             type="button"
             onClick={closeModal}
-            className="rounded-md p-2 text-zinc-500 transition hover:bg-zinc-100 hover:text-zinc-800"
+            className="group rounded-xl p-2 text-zinc-500 transition hover:bg-zinc-100 hover:text-zinc-800 border border-zinc-300 ring ring-zinc-200 ring-offset-2 shadow-md cursor-pointer"
             aria-label="Close modal"
           >
             <svg
@@ -132,12 +135,14 @@ export function InquiryModal() {
               strokeLinecap="round"
               strokeLinejoin="round"
               aria-hidden="true"
+              className="transition-transform duration-300 ease-in-out group-hover:rotate-90"
             >
               <path stroke="none" d="M0 0h24v24H0z" fill="none" />
               <path d="M18 6l-12 12" />
               <path d="M6 6l12 12" />
             </svg>
           </button>
+     
         </div>
 
         {submitted ? (
@@ -240,6 +245,26 @@ export function InquiryModal() {
               </span>
               <span>Submit</span>
             </button>
+
+            <div className="mt-3 flex items-center gap-3">
+              <span className="h-px flex-1 bg-zinc-300" />
+              <span className="text-xs font-semibold uppercase tracking-[0.14em] text-zinc-500">
+                Or
+              </span>
+              <span className="h-px flex-1 bg-zinc-300" />
+            </div>
+
+            <a
+              href="https://t.me"
+              target="_blank"
+              rel="noreferrer"
+              className="mt-3 inline-flex w-full justify-center"
+            >
+              <ShinyButton className="w-full justify-center whitespace-nowrap px-6! py-4! text-sm! sm:px-8! sm:py-5! sm:text-base!">
+                <span className="sm:hidden">Join Quartz Telegram</span>
+                <span className="hidden sm:inline">Join Quartz Telegram Channel</span>
+              </ShinyButton>
+            </a>
           </form>
         )}
       </div>
