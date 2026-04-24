@@ -12,73 +12,80 @@ type Testimonial = {
 
 const testimonials: Testimonial[] = [
   {
-    text: "The daily macro breakdowns gave me clear direction before London open. My execution quality improved within weeks.",
+    text: "Your pre-market macro brief helped me stop trading random moves. I now enter with a clear plan and better risk control.",
     image:
       "https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&q=80&w=150&h=150",
-    name: "Briana Patton",
-    role: "FX Trader",
+    name: "Priya Sharma",
+    role: "Mumbai, India",
   },
   {
-    text: "I used to react to headlines late. Now I understand the why behind moves and can position early with confidence.",
+    text: "The event-day guidance around CPI and Fed updates is very practical. It helps me avoid emotional entries during volatility.",
     image:
       "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?auto=format&fit=crop&q=80&w=150&h=150",
-    name: "Bilal Ahmed",
-    role: "Portfolio Analyst",
+    name: "Arjun Mehta",
+    role: "Delhi, India",
   },
   {
-    text: "The Sunday wrap alone is worth it. It saves hours and gives me a clear game plan for the coming week.",
+    text: "The weekly outlook saves me hours every Sunday. I can map key levels in advance and trade the week with more confidence.",
     image:
       "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?auto=format&fit=crop&q=80&w=150&h=150",
-    name: "Saman Malik",
-    role: "Swing Trader",
+    name: "Neha Verma",
+    role: "Bengaluru, India",
   },
   {
-    text: "Signals are precise and easy to follow. Entry, SL, TP -no noise, just clear actionable levels.",
+    text: "I like that your levels are clear and not overcomplicated. Entry and risk zones are easy to follow even on busy workdays.",
     image:
       "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&q=80&w=150&h=150",
-    name: "Omar Raza",
-    role: "Intraday Trader",
+    name: "Rahul Iyer",
+    role: "Chennai, India",
   },
   {
-    text: "The geopolitical notes helped me avoid high-risk windows and protect capital during volatile sessions.",
+    text: "Your geopolitical notes were useful during high-volatility sessions. I reduced unnecessary trades and protected capital better.",
     image:
       "https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&q=80&w=150&h=150",
-    name: "Zainab Hussain",
-    role: "Risk Manager",
+    name: "Aditi Kulkarni",
+    role: "Pune, India",
   },
   {
-    text: "Best part is the consistency. Every day I get the same high-quality framework to prepare and execute.",
+    text: "The best part is consistency. Daily updates are timely and structured, so my prep routine is now much more disciplined.",
     image:
       "https://images.unsplash.com/photo-1517841905240-472988babdf9?auto=format&fit=crop&q=80&w=150&h=150",
-    name: "Aliza Khan",
-    role: "Market Researcher",
+    name: "Sneha Nair",
+    role: "Hyderabad, India",
   },
   {
-    text: "I finally understand how CPI and NFP flow into price action. This community made macro practical for me.",
+    text: "I finally understand how macro data impacts price action. The explanations are simple, actionable, and easy to apply.",
     image:
       "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&q=80&w=150&h=150",
-    name: "Farhan Siddiqui",
-    role: "Commodity Trader",
+    name: "Vikram Singh",
+    role: "Ahmedabad, India",
   },
   {
-    text: "From structure to sentiment, the confluence model is exactly what I needed to stop overtrading.",
+    text: "The framework combining structure and sentiment helped me cut overtrading. My setups are fewer now, but much higher quality.",
     image:
       "https://images.unsplash.com/photo-1544005313-94ddf0286df2?auto=format&fit=crop&q=80&w=150&h=150",
-    name: "Sana Sheikh",
-    role: "Technical Analyst",
+    name: "Kavya Reddy",
+    role: "Kolkata, India",
   },
   {
-    text: "The quality of insight feels institutional. It helped me upgrade from random setups to disciplined planning.",
+    text: "The research quality feels professional and balanced. I moved from impulsive entries to planned execution in a few weeks.",
     image:
       "https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?auto=format&fit=crop&q=80&w=150&h=150",
-    name: "Hassan Ali",
-    role: "Independent Trader",
+    name: "Rohan Desai",
+    role: "Jaipur, India",
+  },
+  {
+    text: "The alerts and market context are clear enough for beginners yet detailed enough for active traders. Great value overall.",
+    image:
+      "https://images.unsplash.com/photo-1544717305-2782549b5136?auto=format&fit=crop&q=80&w=150&h=150",
+    name: "Ananya Patel",
+    role: "Surat, India",
   },
 ];
 
-const firstColumn = testimonials.slice(0, 3);
-const secondColumn = testimonials.slice(3, 6);
-const thirdColumn = testimonials.slice(6, 9);
+const firstColumn = testimonials.slice(0, 4);
+const secondColumn = testimonials.slice(4, 7);
+const thirdColumn = testimonials.slice(7, 10);
 
 function TestimonialsColumn({
   testimonials: items,
