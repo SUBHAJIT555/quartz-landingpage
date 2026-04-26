@@ -2,16 +2,22 @@
 
 import { useEffect, useRef, useState } from "react";
 import type { ReactNode } from "react";
+import type { StaticImageData } from "next/image";
 import { Container } from "@/components/shared/Container";
 import { motion } from "framer-motion";
 import ShinyText from "@/components/ui/ShinyText";
+import GeopoliticalPulseImage from "../../../../public/track/GeopoliticalPulse.webp";
+import EconomicDataDecodedImage from "../../../../public/track/EconomicDataDecoded.webp";
+import MultiIndicatorAnalysisImage from "../../../../public/track/Multi-IndicatorAnalysis.webp";
+import LiveMarketSignalsImage from "../../../../public/track/LiveMarketSignals.webp";
+import TheWeeklyWrapImage from "../../../../public/track/TheWeeklyWrap.webp";
 
 type TrackEntry = {
   icon: ReactNode;
   heading: string;
   paragraph: string;
   points: string[];
-  image: string;
+  image: string | StaticImageData;
 };
 
 const trackEntries: TrackEntry[] = [
@@ -31,8 +37,7 @@ const trackEntries: TrackEntry[] = [
     heading: "Geopolitical Pulse",
     paragraph:
       "Tracking sanctions, conflicts and policy shifts that move currencies before headlines catch up.",
-    image:
-      "https://images.pexels.com/photos/6802042/pexels-photo-6802042.jpeg?auto=compress&cs=tinysrgb&w=1400",
+    image: GeopoliticalPulseImage,
     points: [
       "Country-level policy updates with market impact context",
       "Risk-on / risk-off bias noted for major sessions",
@@ -52,8 +57,7 @@ const trackEntries: TrackEntry[] = [
     heading: "Economic Data Decoded",
     paragraph:
       "CPI, NFP, PMI -we break down what the numbers actually mean for your positions.",
-    image:
-      "https://images.pexels.com/photos/6693656/pexels-photo-6693656.jpeg?auto=compress&cs=tinysrgb&w=1400",
+    image: EconomicDataDecodedImage,
     points: [
       "Consensus vs actual surprise analysis",
       "Immediate implications for FX, indices, and commodities",
@@ -69,8 +73,7 @@ const trackEntries: TrackEntry[] = [
     heading: "Multi-Indicator Analysis",
     paragraph:
       "Confluence-based setups using structure, momentum, volume and sentiment across timeframes.",
-    image:
-      "https://images.pexels.com/photos/7567534/pexels-photo-7567534.jpeg?auto=compress&cs=tinysrgb&w=1400",
+    image: MultiIndicatorAnalysisImage,
     points: [
       "Bias alignment from higher timeframes to execution charts",
       "Signal quality scores with invalidation context",
@@ -88,8 +91,7 @@ const trackEntries: TrackEntry[] = [
     heading: "Live Market Signals",
     paragraph:
       "Real-time alerts with clear entry, SL and TP levels -delivered directly to your device.",
-    image:
-      "https://images.pexels.com/photos/6801648/pexels-photo-6801648.jpeg?auto=compress&cs=tinysrgb&w=1400",
+    image: LiveMarketSignalsImage,
     points: [
       "Instant push-style updates during key sessions",
       "Clear risk framing before and after execution",
@@ -109,8 +111,7 @@ const trackEntries: TrackEntry[] = [
     heading: "The Weekly Wrap",
     paragraph:
       "Every Sunday -a full debrief of the week's moves and a roadmap for the week ahead.",
-    image:
-      "https://images.pexels.com/photos/7654125/pexels-photo-7654125.jpeg?auto=compress&cs=tinysrgb&w=1400",
+    image: TheWeeklyWrapImage,
     points: [
       "Top winners, losers, and regime shifts summarized",
       "Macro calendar priorities for the next week",
@@ -167,21 +168,21 @@ export function WhatWeTrackSection() {
               >
                 <div className="mb-4 overflow-hidden rounded-xl">
                   <img
-                    src={entry.image}
+                    src={typeof entry.image === "string" ? entry.image : entry.image.src}
                     alt={`${entry.heading} visual`}
-                    className="h-52 w-full object-cover"
+                    className="h-auto w-full object-contain"
                     loading="lazy"
                   />
                 </div>
                 <div className="flex items-center gap-3">
-                  <span className="inline-flex h-8 w-8 items-center justify-center rounded-lg bg-zinc-100 border border-zinc-300 ring ring-zinc-200 ring-offset-2 shadow-md text-base">
+                  <span className="inline-flex h-7 w-7 items-center justify-center rounded-lg bg-zinc-100 border border-zinc-300 ring ring-zinc-200 ring-offset-2 shadow-md text-base">
                     {entry.icon}
                   </span>
-                  <h3 className="text-lg font-semibold text-zinc-900">
+                  <h3 className="text-lg font-bold text-zinc-900">
                     <ShinyText text={entry.heading} speed={3} />
                   </h3>
                 </div>
-                <p className="mt-3 text-sm leading-relaxed text-zinc-700 font-medium">
+                <p className="mt-3 text-sm leading-relaxed text-zinc-800 font-semibold">
                   {entry.paragraph}
                 </p>
                 <div className="h-px w-full bg-zinc-200 my-2"></div>
@@ -253,7 +254,7 @@ export function WhatWeTrackSection() {
                   >
                     <div className="mb-4 overflow-hidden rounded-xl">
                       <img
-                        src={entry.image}
+                        src={typeof entry.image === "string" ? entry.image : entry.image.src}
                         alt={`${entry.heading} visual`}
                         className={`w-full object-cover transition-all duration-300 ${
                           isActive ? "h-56 md:h-64" : "h-44 md:h-48"

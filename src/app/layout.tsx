@@ -13,8 +13,14 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Quartz Landing Page",
-  description: "Landing page scaffold built with Next.js and TypeScript.",
+  title: "Quartz Financial Advisory | Market Intelligence Community",
+  description:
+    "Real-time market intelligence from geopolitics, macro data, and technical signals delivered daily by Quartz Financial Advisory.",
+  icons: {
+    icon: "/logo/quartz-icon.webp",
+    shortcut: "/logo/quartz-icon.webp",
+    apple: "/logo/quartz-icon.webp",
+  },
 };
 
 export default function RootLayout({

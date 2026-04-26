@@ -2,10 +2,21 @@
 
 import { motion } from "framer-motion";
 import { Container } from "@/components/shared/Container";
+import type { StaticImageData } from "next/image";
+import AditiKulkarniImage from "../../../../public/Testimonials/AditiKulkarni.webp";
+import AnanyaPatelImage from "../../../../public/Testimonials/AnanyaPatel.webp";
+import ArjunMehtaImage from "../../../../public/Testimonials/ArjunMehta.webp";
+import KavyaReddyImage from "../../../../public/Testimonials/KavyaReddy.webp";
+import NehaVermaImage from "../../../../public/Testimonials/NehaVerma.webp";
+import PriyaSharmaImage from "../../../../public/Testimonials/PriyaSharma.webp";
+import RahulIyerImage from "../../../../public/Testimonials/RahulIyer.webp";
+import RohanDesaiImage from "../../../../public/Testimonials/RohanDesai.webp";
+import SnehaNairImage from "../../../../public/Testimonials/SnehaNair.webp";
+import VikramSinghImage from "../../../../public/Testimonials/VikramSingh.webp";
 
 type Testimonial = {
   text: string;
-  image: string;
+  image: string | StaticImageData;
   name: string;
   role: string;
 };
@@ -13,71 +24,61 @@ type Testimonial = {
 const testimonials: Testimonial[] = [
   {
     text: "Your pre-market macro brief helped me stop trading random moves. I now enter with a clear plan and better risk control.",
-    image:
-      "https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&q=80&w=150&h=150",
+    image: PriyaSharmaImage,
     name: "Priya Sharma",
     role: "Mumbai, India",
   },
   {
     text: "The event-day guidance around CPI and Fed updates is very practical. It helps me avoid emotional entries during volatility.",
-    image:
-      "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?auto=format&fit=crop&q=80&w=150&h=150",
+    image: ArjunMehtaImage,
     name: "Arjun Mehta",
     role: "Delhi, India",
   },
   {
     text: "The weekly outlook saves me hours every Sunday. I can map key levels in advance and trade the week with more confidence.",
-    image:
-      "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?auto=format&fit=crop&q=80&w=150&h=150",
+    image: NehaVermaImage,
     name: "Neha Verma",
     role: "Bengaluru, India",
   },
   {
     text: "I like that your levels are clear and not overcomplicated. Entry and risk zones are easy to follow even on busy workdays.",
-    image:
-      "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&q=80&w=150&h=150",
+    image: RahulIyerImage,
     name: "Rahul Iyer",
     role: "Chennai, India",
   },
   {
     text: "Your geopolitical notes were useful during high-volatility sessions. I reduced unnecessary trades and protected capital better.",
-    image:
-      "https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&q=80&w=150&h=150",
+    image: AditiKulkarniImage,
     name: "Aditi Kulkarni",
     role: "Pune, India",
   },
   {
     text: "The best part is consistency. Daily updates are timely and structured, so my prep routine is now much more disciplined.",
-    image:
-      "https://images.unsplash.com/photo-1517841905240-472988babdf9?auto=format&fit=crop&q=80&w=150&h=150",
+    image: SnehaNairImage,
     name: "Sneha Nair",
     role: "Hyderabad, India",
   },
   {
     text: "I finally understand how macro data impacts price action. The explanations are simple, actionable, and easy to apply.",
-    image:
-      "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&q=80&w=150&h=150",
+    image: VikramSinghImage,
     name: "Vikram Singh",
     role: "Ahmedabad, India",
   },
   {
     text: "The framework combining structure and sentiment helped me cut overtrading. My setups are fewer now, but much higher quality.",
-    image:
-      "https://images.unsplash.com/photo-1544005313-94ddf0286df2?auto=format&fit=crop&q=80&w=150&h=150",
+    image: KavyaReddyImage,
     name: "Kavya Reddy",
     role: "Kolkata, India",
   },
   {
     text: "The research quality feels professional and balanced. I moved from impulsive entries to planned execution in a few weeks.",
-    image:
-      "https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?auto=format&fit=crop&q=80&w=150&h=150",
+    image: RohanDesaiImage,
     name: "Rohan Desai",
     role: "Jaipur, India",
   },
   {
     text: "The alerts and market context are clear enough for beginners yet detailed enough for active traders. Great value overall.",
-    image:
-      "https://images.unsplash.com/photo-1544717305-2782549b5136?auto=format&fit=crop&q=80&w=150&h=150",
+    image: AnanyaPatelImage,
     name: "Ananya Patel",
     role: "Surat, India",
   },
@@ -121,9 +122,9 @@ function TestimonialsColumn({
                   <img
                     width={40}
                     height={40}
-                    src={item.image}
+                    src={typeof item.image === "string" ? item.image : item.image.src}
                     alt={`Avatar of ${item.name}`}
-                    className="h-10 w-10 rounded-full object-cover ring-2 ring-zinc-100"
+                    className="h-10 w-10 rounded-full object-cover ring-2 ring-zinc-100 ring-offset-2 shadow-sm border border-zinc-300"
                     loading="lazy"
                   />
                   <div className="flex flex-col">

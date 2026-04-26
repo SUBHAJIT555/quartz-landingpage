@@ -5,8 +5,21 @@ import { ContainerScroll } from "@/components/ui/container-scroll-animation";
 import GradientText from "@/components/ui/GradientText";
 import ShinyText from "@/components/ui/ShinyText";
 import { ShinyButton } from "@/components/ui/shiny-button";
+import PriyaSharmaImage from "../../../../public/Testimonials/PriyaSharma.webp";
+import ArjunMehtaImage from "../../../../public/Testimonials/ArjunMehta.webp";
+import NehaVermaImage from "../../../../public/Testimonials/NehaVerma.webp";
+import RahulIyerImage from "../../../../public/Testimonials/RahulIyer.webp";
+import AnanyaPatelImage from "../../../../public/Testimonials/AnanyaPatel.webp";
 
 export function HeroSection() {
+  const memberAvatars = [
+    PriyaSharmaImage,
+    ArjunMehtaImage,
+    NehaVermaImage,
+    RahulIyerImage,
+    AnanyaPatelImage,
+  ];
+
   const videoRef = useRef<HTMLVideoElement>(null);
   const [isPlaying, setIsPlaying] = useState(true);
   const [hasSoundStarted, setHasSoundStarted] = useState(false);
@@ -199,17 +212,12 @@ export function HeroSection() {
             <div className="flex flex-col items-center gap-6 px-5 py-5 sm:px-8 sm:py-6">
               <div className="flex flex-wrap items-center justify-center gap-3 text-center">
                 <div className="-space-x-2">
-                  {[
-                    "https://i.pravatar.cc/80?img=12",
-                    "https://i.pravatar.cc/80?img=32",
-                    "https://i.pravatar.cc/80?img=45",
-                    "https://i.pravatar.cc/80?img=52",
-                  ].map((avatar) => (
+                  {memberAvatars.map((avatar, index) => (
                     <img
-                      key={avatar}
-                      src={avatar}
+                      key={`member-avatar-${index}`}
+                      src={avatar.src}
                       alt="Community member"
-                      className="inline-block h-10 w-10 rounded-full border-2 border-white object-cover sm:h-11 sm:w-11"
+                      className="inline-block h-10 w-10 rounded-full border-2 border-zinc-300 object-cover sm:h-11 sm:w-11"
                       loading="lazy"
                     />
                   ))}

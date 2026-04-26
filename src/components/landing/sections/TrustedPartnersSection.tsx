@@ -7,11 +7,14 @@ import Shuffle from "@/components/ui/Shuffle";
 import { Globe3D, type GlobeMarker } from "@/components/ui/3d-globe";
 
 const partnerGlobeMarkers: GlobeMarker[] = [
-  { lat: 25.2048, lng: 55.2708, src: "https://assets.aceternity.com/avatars/10.webp", label: "Dubai" },
-  { lat: 51.5074, lng: -0.1278, src: "https://assets.aceternity.com/avatars/2.webp", label: "London" },
-  { lat: 40.7128, lng: -74.006, src: "https://assets.aceternity.com/avatars/1.webp", label: "New York" },
-  { lat: 1.3521, lng: 103.8198, src: "https://assets.aceternity.com/avatars/12.webp", label: "Singapore" },
-  { lat: 35.6762, lng: 139.6503, src: "https://assets.aceternity.com/avatars/3.webp", label: "Tokyo" },
+  { lat: 19.076, lng: 72.8777, src: "/Testimonials/PriyaSharma.webp", label: "Mumbai" },
+  { lat: 28.6139, lng: 77.209, src: "/Testimonials/ArjunMehta.webp", label: "Delhi" },
+  { lat: 12.9716, lng: 77.5946, src: "/Testimonials/NehaVerma.webp", label: "Bengaluru" },
+  { lat: 13.0827, lng: 80.2707, src: "/Testimonials/RahulIyer.webp", label: "Chennai" },
+  { lat: 17.385, lng: 78.4867, src: "/Testimonials/SnehaNair.webp", label: "Hyderabad" },
+  { lat: 25.2048, lng: 55.2708, src: "/Testimonials/AditiKulkarni.webp", label: "Dubai" },
+  { lat: 25.3463, lng: 55.4209, src: "/Testimonials/VikramSingh.webp", label: "Sharjah" },
+  { lat: 24.4539, lng: 54.3773, src: "/Testimonials/AnanyaPatel.webp", label: "Abu Dhabi" },
 ];
 
 export function TrustedPartnersSection() {
