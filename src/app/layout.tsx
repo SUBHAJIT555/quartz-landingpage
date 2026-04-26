@@ -17,9 +17,9 @@ export const metadata: Metadata = {
   description:
     "Real-time market intelligence from geopolitics, macro data, and technical signals delivered daily by Quartz Financial Advisory.",
   icons: {
-    icon: "/logo/quartz-icon.webp",
-    shortcut: "/logo/quartz-icon.webp",
-    apple: "/logo/quartz-icon.webp",
+    icon: "/logo/quartz-icon.ico",
+    shortcut: "/logo/quartz-icon.ico",
+    apple: "/logo/quartz-icon.ico",
   },
 };
 
