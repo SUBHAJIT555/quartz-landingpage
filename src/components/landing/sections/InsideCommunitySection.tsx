@@ -2,22 +2,33 @@
 
 import * as React from "react";
 import { HTMLMotionProps, motion } from "framer-motion";
+import type { StaticImageData } from "next/image";
 import { Container } from "@/components/shared/Container";
 import { cn } from "@/lib/cn";
 import ShinyText from "@/components/ui/ShinyText";
+import ReactCountryFlag from "react-country-flag";
 import EconomicDataImage from "../../../../public/community/EconomicData.webp";
 import GeopoliticalAlertImage from "../../../../public/community/GeopoliticalAlert.webp";
 import TechnicalSetupImage from "../../../../public/community/TechnicalSetup.webp";
 import WeeklyWrapImage from "../../../../public/community/WeeklyWrap.webp";
 
+type CommunityCard = {
+  title: string;
+  time: string;
+  content: string;
+  countryCodes?: readonly string[];
+  image: StaticImageData;
+  alt: string;
+};
 
-
-const cards = [
+const cards: readonly CommunityCard[] = [
   {
     title: "Geopolitical Alert",
     time: "08:14 AM",
     content:
-      "🇺🇸🇨🇳 New tariff measures announced on semiconductor exports. USD/CNH likely to gap on Asia open. Watch 7.2850 resistance.",
+      "New tariff measures announced on semiconductor exports. USD/CNH likely to gap on Asia open. Watch 7.2850 resistance.",
+    countryCodes: ["US", "CN"],
+ 
     image: GeopoliticalAlertImage,
     alt: "Global market monitoring dashboard",
   },
@@ -25,7 +36,8 @@ const cards = [
     title: "Economic Data",
     time: "02:30 PM",
     content:
-      "🇺🇸 CPI came in at 3.2% vs 3.4% expected. Core MoM 0.2%. Dovish repricing underway -DXY breaking below 104.20. Gold bid.",
+      "CPI came in at 3.2% vs 3.4% expected. Core MoM 0.2%. Dovish repricing underway -DXY breaking below 104.20. Gold bid.",
+    countryCodes: ["US"],
     image: EconomicDataImage,
     alt: "Economic charts and macro analysis",
   },
@@ -45,7 +57,7 @@ const cards = [
     image: WeeklyWrapImage,
     alt: "Weekly market review notes and dashboard",
   },
-] as const;
+];
 
 const sharedGrid = {
   backgroundImage:
@@ -220,6 +232,17 @@ export function InsideCommunitySection() {
                           isAccent ? "text-white/90" : "text-zinc-700",
                         )}
                       >
+                        {card.countryCodes?.map((countryCode, countryIndex) => (
+                          <span key={`${countryCode}-${countryIndex}`} className="mr-2 inline-flex items-center gap-1">
+                            <ReactCountryFlag
+                              countryCode={countryCode}
+                              svg
+                              className="inline-block text-base align-[-0.12em]"
+                              aria-label={countryCode}
+                            />
+                            <span className="text-xs font-semibold text-zinc-700">({countryCode})</span>
+                          </span>
+                        ))}
                         {card.content}
                       </p>
                     </div>
@@ -312,6 +335,17 @@ export function InsideCommunitySection() {
                               isAccent ? "text-white/90" : "text-zinc-700",
                             )}
                           >
+                            {card.countryCodes?.map((countryCode, countryIndex) => (
+                              <span key={`${countryCode}-${countryIndex}`} className="mr-2 inline-flex items-center gap-1.5">
+                                <ReactCountryFlag
+                                  countryCode={countryCode}
+                                  svg
+                                  className="inline-block text-xl align-[-0.12em]"
+                                  aria-label={countryCode}
+                                />
+                                <span className="text-sm font-semibold text-zinc-700">({countryCode})</span>
+                              </span>
+                            ))}
                             {card.content}
                           </p>
                         </div>
@@ -382,6 +416,17 @@ export function InsideCommunitySection() {
                               isAccent ? "text-white/90" : "text-zinc-700",
                             )}
                           >
+                            {card.countryCodes?.map((countryCode, countryIndex) => (
+                              <span key={`${countryCode}-${countryIndex}`} className="mr-2 inline-flex items-center gap-1.5">
+                                <ReactCountryFlag
+                                  countryCode={countryCode}
+                                  svg
+                                  className="inline-block text-xl align-[-0.12em]"
+                                  aria-label={countryCode}
+                                />
+                                <span className="text-sm font-semibold text-zinc-700">({countryCode})</span>
+                              </span>
+                            ))}
                             {card.content}
                           </p>
                         </div>

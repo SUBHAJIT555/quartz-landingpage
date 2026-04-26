@@ -173,7 +173,18 @@ export function HeroSection() {
                 className="absolute left-1/2 top-1/2 flex h-20 w-20 -translate-x-1/2 -translate-y-1/2 items-center justify-center rounded-full border border-neutral-400 bg-black/75 text-white shadow-xl backdrop-blur transition hover:scale-105 cursor-pointer"
                 aria-label={!hasSoundStarted ? "Play video with sound" : "Play video"}
               >
-                <span className="ml-1 text-3xl">▶</span>
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="24"
+                  height="24"
+                  viewBox="0 0 24 24"
+                  fill="currentColor"
+                  className="ml-1 h-10 w-10"
+                  aria-hidden="true"
+                >
+                  <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                  <path d="M6 4v16a1 1 0 0 0 1.524 .852l13 -8a1 1 0 0 0 0 -1.704l-13 -8a1 1 0 0 0 -1.524 .852z" />
+                </svg>
               </button>
             )}
 
