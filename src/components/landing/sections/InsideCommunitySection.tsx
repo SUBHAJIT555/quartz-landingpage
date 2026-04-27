@@ -49,14 +49,14 @@ const cards: readonly CommunityCard[] = [
     image: TechnicalSetupImage,
     alt: "Technical chart analysis on trading screens",
   },
-  {
-    title: "Weekly Wrap",
-    time: "Sunday",
-    content:
-      "Week in review: DXY -0.8%, Gold +2.1%, SPX flat. Key theme: dovish Fed pivot narrative gaining traction. Next week: FOMC minutes, EU GDP.",
-    image: WeeklyWrapImage,
-    alt: "Weekly market review notes and dashboard",
-  },
+  // {
+  //   title: "Weekly Wrap",
+  //   time: "Sunday",
+  //   content:
+  //     "Week in review: DXY -0.8%, Gold +2.1%, SPX flat. Key theme: dovish Fed pivot narrative gaining traction. Next week: FOMC minutes, EU GDP.",
+  //   image: WeeklyWrapImage,
+  //   alt: "Weekly market review notes and dashboard",
+  // },
 ];
 
 const sharedGrid = {

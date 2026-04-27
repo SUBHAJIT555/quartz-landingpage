@@ -87,6 +87,7 @@ const testimonials: Testimonial[] = [
 const firstColumn = testimonials.slice(0, 4);
 const secondColumn = testimonials.slice(4, 7);
 const thirdColumn = testimonials.slice(7, 10);
+const mobileColumn = testimonials.slice(0, 2);
 
 function TestimonialsColumn({
   testimonials: items,
@@ -163,8 +164,17 @@ export function WhatMembersSaySection() {
             </p>
           </div>
 
-          <div className="flex justify-center gap-6 mask-[linear-gradient(to_bottom,transparent,black_10%,black_90%,transparent)] max-h-[740px] overflow-hidden">
-            <TestimonialsColumn testimonials={firstColumn} duration={15} />
+          <div className="flex justify-center gap-6 mask-[linear-gradient(to_bottom,transparent,black_10%,black_90%,transparent)] max-h-[420px] overflow-hidden md:max-h-[740px]">
+            <TestimonialsColumn
+              testimonials={mobileColumn}
+              className="md:hidden"
+              duration={15}
+            />
+            <TestimonialsColumn
+              testimonials={firstColumn}
+              className="hidden md:block"
+              duration={15}
+            />
             <TestimonialsColumn
               testimonials={secondColumn}
               className="hidden md:block"

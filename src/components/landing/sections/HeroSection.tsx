@@ -12,6 +12,7 @@ import RahulIyerImage from "../../../../public/Testimonials/RahulIyer.webp";
 import AnanyaPatelImage from "../../../../public/Testimonials/AnanyaPatel.webp";
 
 export function HeroSection() {
+  const TELEGRAM_GROUP_URL = "https://t.me";
   const videoSources = {
     english: "/herovideo.mp4",
     hindi: "/herovideo.mp4",
@@ -159,8 +160,8 @@ export function HeroSection() {
     return `${minutes}:${seconds}`;
   };
 
-  const openInquiryModal = () => {
-    window.dispatchEvent(new Event("openInquiryModal"));
+  const openTelegramGroup = () => {
+    window.open(TELEGRAM_GROUP_URL, "_blank", "noopener,noreferrer");
   };
 
   return (
@@ -172,7 +173,7 @@ export function HeroSection() {
         className="absolute inset-0 z-0"
         style={{
           backgroundImage:
-            "linear-gradient(to right, #e7e5e4 1px, transparent 1px), linear-gradient(to bottom, #e7e5e4 1px, transparent 1px)",
+            "linear-gradient(to right, rgba(231, 229, 228, 0.3) 1px, transparent 1px), linear-gradient(to bottom, rgba(231, 229, 228, 0.3) 1px, transparent 1px)",
           backgroundSize: "1px 1px",
           backgroundPosition: "0 0, 0 0",
           maskImage:
@@ -188,7 +189,7 @@ export function HeroSection() {
         <ContainerScroll
           titleComponent={
             <div className="space-y-3 px-4 md:space-y-5">
-              <p className="text-xs font-bold uppercase tracking-[0.24em] sm:text-sm">
+              <p className="text-xs font-extrabold! uppercase tracking-[0.24em] sm:text-sm">
                 <GradientText
                   colors={["#0f172a", "#2563eb", "#0f172a", "#1d4ed8", "#0f172a"]}
                   animationSpeed={3}
@@ -215,7 +216,7 @@ export function HeroSection() {
                   className="inline"
                 />
               </h1>
-              <p className="mx-auto max-w-3xl text-sm leading-relaxed text-zinc-600 sm:text-base md:text-lg">
+              <p className="mx-auto max-w-3xl text-sm font-medium leading-relaxed text-zinc-900 sm:text-base md:text-lg">
                 Real-time intelligence from geopolitics, macro data, and
                 technical signals delivered daily.
               </p>
@@ -323,7 +324,7 @@ export function HeroSection() {
                         : "bg-white/10 text-white hover:bg-white/20"
                     }`}
                   >
-                    Hindi
+                    Hindi (हिन्दी)
                   </button>
                 </div>
                 <input
@@ -393,7 +394,7 @@ export function HeroSection() {
                 </p>
               </div>
 
-              <ShinyButton onClick={openInquiryModal}>
+              <ShinyButton onClick={openTelegramGroup}>
                 Join the Inner Circle
               </ShinyButton>
             </div>

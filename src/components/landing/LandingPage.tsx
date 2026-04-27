@@ -1,6 +1,5 @@
 import { HeroSection } from "@/components/landing/sections/HeroSection";
 import { InsideCommunitySection } from "@/components/landing/sections/InsideCommunitySection";
-import { InquiryModal } from "@/components/landing/InquiryModal";
 import { LandingNavbar } from "@/components/landing/LandingNavbar";
 import { FooterSection } from "@/components/landing/sections/FooterSection";
 import { NotForEveryoneSection } from "@/components/landing/sections/NotForEveryoneSection";
@@ -12,7 +11,6 @@ export function LandingPage() {
   return (
     <main className="min-h-screen bg-white text-zinc-900">
       <LandingNavbar />
-      <InquiryModal />
       <HeroSection />
       <TrustedPartnersSection />
       <InsideCommunitySection />

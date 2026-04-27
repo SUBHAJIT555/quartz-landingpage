@@ -97,26 +97,26 @@ const trackEntries: TrackEntry[] = [
       "Clear risk framing before and after execution",
     ],
   },
-  {
-    icon: (
-      <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true" className="text-zinc-800">
-        <path stroke="none" d="M0 0h24v24H0z" fill="none" />
-        <path d="M4 7a2 2 0 0 1 2 -2h12a2 2 0 0 1 2 2v12a2 2 0 0 1 -2 2h-12a2 2 0 0 1 -2 -2l0 -12" />
-        <path d="M16 3l0 4" />
-        <path d="M8 3l0 4" />
-        <path d="M4 11l16 0" />
-        <path d="M8 15h2v2h-2l0 -2" />
-      </svg>
-    ),
-    heading: "The Weekly Wrap",
-    paragraph:
-      "Every Sunday -a full debrief of the week's moves and a roadmap for the week ahead.",
-    image: TheWeeklyWrapImage,
-    points: [
-      "Top winners, losers, and regime shifts summarized",
-      "Macro calendar priorities for the next week",
-    ],
-  },
+  // {
+  //   icon: (
+  //     <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true" className="text-zinc-800">
+  //       <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+  //       <path d="M4 7a2 2 0 0 1 2 -2h12a2 2 0 0 1 2 2v12a2 2 0 0 1 -2 2h-12a2 2 0 0 1 -2 -2l0 -12" />
+  //       <path d="M16 3l0 4" />
+  //       <path d="M8 3l0 4" />
+  //       <path d="M4 11l16 0" />
+  //       <path d="M8 15h2v2h-2l0 -2" />
+  //     </svg>
+  //   ),
+  //   heading: "The Weekly Wrap",
+  //   paragraph:
+  //     "Every Sunday -a full debrief of the week's moves and a roadmap for the week ahead.",
+  //   image: TheWeeklyWrapImage,
+  //   points: [
+  //     "Top winners, losers, and regime shifts summarized",
+  //     "Macro calendar priorities for the next week",
+  //   ],
+  // },
 ];
 
 export function WhatWeTrackSection() {
@@ -157,7 +157,7 @@ export function WhatWeTrackSection() {
             What We Track
           </h2>
           <p className="mt-3 text-base leading-relaxed font-medium text-zinc-600">
-            Five pillars of intelligence delivered daily to our community.
+            Four pillars of intelligence delivered daily to our community.
           </p>
 
           <div className="mt-8 space-y-4">
@@ -205,7 +205,7 @@ export function WhatWeTrackSection() {
               What We Track
             </h2>
             <p className="mt-4 text-lg font-medium leading-relaxed text-zinc-600">
-              Five pillars of intelligence delivered daily to our community.
+              Four pillars of intelligence delivered daily to our community.
             </p>
           </div>
 

@@ -56,11 +56,12 @@ const mobileItemVariants = {
 };
 
 export function LandingNavbar() {
+  const TELEGRAM_GROUP_URL = "https://t.me";
   const [open, setOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
 
-  const openInquiryModal = () => {
-    window.dispatchEvent(new Event("openInquiryModal"));
+  const openTelegramGroup = () => {
+    window.open(TELEGRAM_GROUP_URL, "_blank", "noopener,noreferrer");
     setOpen(false);
   };
 
@@ -132,7 +133,7 @@ export function LandingNavbar() {
 
         <div className="hidden md:block">
           <ShinyButton
-            onClick={openInquiryModal}
+            onClick={openTelegramGroup}
             className="shiny-cta--compact"
           >
             Join the Inner Circle
@@ -248,7 +249,7 @@ export function LandingNavbar() {
             ))}
             <motion.div variants={mobileItemVariants}>
               <ShinyButton
-                onClick={openInquiryModal}
+                onClick={openTelegramGroup}
                 className="mt-1 w-full justify-center px-6! py-4! text-sm!"
               >
                 Join the Inner Circle
