@@ -4,6 +4,8 @@ import { Container } from "@/components/shared/Container";
 import GradientText from "@/components/ui/GradientText";
 
 export function FooterSection() {
+  const TELEGRAM_GROUP_URL = "https://t.me/Quartzfinancial";
+
   return (
     <footer className="border-t border-zinc-200 bg-zinc-50/70 py-10 md:py-12">
       <Container className="max-w-7xl">
@@ -89,7 +91,12 @@ export function FooterSection() {
                   <span>Facebook</span>
                   <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="translate-x-[-3px] opacity-0 transition duration-200 group-hover:translate-x-0 group-hover:opacity-100" aria-hidden="true"><path stroke="none" d="M0 0h24v24H0z" fill="none" /><path d="M5 12h.5m3 0h1.5m3 0h6" /><path d="M13 18l6 -6" /><path d="M13 6l6 6" /></svg>
                 </a>
-                <a href="#" className="group flex w-fit items-center gap-1 transition hover:text-zinc-900">
+                <a
+                  href={TELEGRAM_GROUP_URL}
+                  target="_blank"
+                  rel="noreferrer"
+                  className="group flex w-fit items-center gap-1 transition hover:text-zinc-900"
+                >
                   <span>Telegram</span>
                   <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="translate-x-[-3px] opacity-0 transition duration-200 group-hover:translate-x-0 group-hover:opacity-100" aria-hidden="true"><path stroke="none" d="M0 0h24v24H0z" fill="none" /><path d="M5 12h.5m3 0h1.5m3 0h6" /><path d="M13 18l6 -6" /><path d="M13 6l6 6" /></svg>
                 </a>
@@ -149,7 +156,9 @@ export function FooterSection() {
         </div>
 
         <div className="mt-4 border-t border-zinc-200 pt-4 text-center text-xs text-zinc-500 md:text-sm">
-          © {new Date().getFullYear()} Quartz Financial Advisory | All rights reserved.
+          © {new Date().getFullYear()} Quartz Financial Advisory | All rights reserved. Developed with <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="currentColor" className="inline align-middle mx-0.5 icon icon-tabler icons-tabler-filled icon-tabler-heart"><path stroke="none" d="M0 0h24v24H0z" fill="none" /><path d="M6.979 3.074a6 6 0 0 1 4.988 1.425l.037 .033l.034 -.03a6 6 0 0 1 4.733 -1.44l.246 .036a6 6 0 0 1 3.364 10.008l-.18 .185l-.048 .041l-7.45 7.379a1 1 0 0 1 -1.313 .082l-.094 -.082l-7.493 -7.422a6 6 0 0 1 3.176 -10.215z" /></svg> by <a href="https://subhajit-dhali.vercel.app/" target="_blank" rel="noopener noreferrer" className="underline decoration-zinc-400 underline-offset-4 hover:text-zinc-700 transition">Subhajit</a>
+     
+     
         </div>
       </Container>
     </footer>

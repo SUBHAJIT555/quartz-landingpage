@@ -56,7 +56,7 @@ const mobileItemVariants = {
 };
 
 export function LandingNavbar() {
-  const TELEGRAM_GROUP_URL = "https://t.me";
+  const TELEGRAM_GROUP_URL = "https://t.me/Quartzfinancial";
   const [open, setOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
 

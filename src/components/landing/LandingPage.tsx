@@ -8,6 +8,8 @@ import { WhatMembersSaySection } from "@/components/landing/sections/WhatMembers
 import { WhatWeTrackSection } from "@/components/landing/sections/WhatWeTrackSection";
 
 export function LandingPage() {
+  const TELEGRAM_GROUP_URL = "https://t.me/Quartzfinancial";
+
   return (
     <main className="min-h-screen bg-white text-zinc-900">
       <LandingNavbar />
@@ -20,7 +22,7 @@ export function LandingPage() {
       <FooterSection />
 
       <a
-        href="https://t.me"
+        href={TELEGRAM_GROUP_URL}
         target="_blank"
         rel="noreferrer"
         aria-label="Join Quartz on Telegram"

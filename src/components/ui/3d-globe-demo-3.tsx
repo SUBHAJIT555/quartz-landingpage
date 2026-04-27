@@ -67,6 +67,12 @@ const sampleMarkers: GlobeMarker[] = [
 ];
 
 export default function Globe3DDemoThird() {
+  const TELEGRAM_GROUP_URL = "https://t.me/Quartzfinancial";
+
+  const openTelegramGroup = () => {
+    window.open(TELEGRAM_GROUP_URL, "_blank", "noopener,noreferrer");
+  };
+
   return (
     <div className="relative mx-auto h-[620px] w-full max-w-7xl overflow-hidden rounded-3xl border border-zinc-300 bg-white shadow-xl ring ring-zinc-200 ring-offset-4 ring-offset-white sm:h-[560px] md:h-[400px] md:ring-offset-6">
       <div className="relative z-10 p-4 sm:p-6 md:p-12">
@@ -78,7 +84,10 @@ export default function Globe3DDemoThird() {
         </p>
 
         <div className="mt-4 flex flex-wrap gap-3 md:mt-8 md:gap-4">
-          <ShinyButton className="max-w-full whitespace-nowrap px-5! py-4! text-base! sm:px-10! sm:py-5! sm:text-lg!">
+          <ShinyButton
+            onClick={openTelegramGroup}
+            className="max-w-full whitespace-nowrap px-5! py-4! text-base! sm:px-10! sm:py-5! sm:text-lg!"
+          >
             Join Quartz Telegram Channel
           </ShinyButton>
           

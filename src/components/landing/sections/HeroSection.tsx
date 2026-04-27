@@ -12,7 +12,7 @@ import RahulIyerImage from "../../../../public/Testimonials/RahulIyer.webp";
 import AnanyaPatelImage from "../../../../public/Testimonials/AnanyaPatel.webp";
 
 export function HeroSection() {
-  const TELEGRAM_GROUP_URL = "https://t.me";
+  const TELEGRAM_GROUP_URL = "https://t.me/Quartzfinancial";
   const videoSources = {
     english: "/herovideo.mp4",
     hindi: "/herovideo.mp4",
