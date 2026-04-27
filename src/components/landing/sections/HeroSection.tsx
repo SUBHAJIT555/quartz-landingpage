@@ -1,6 +1,6 @@
 "use client";
 
-import { useRef, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { ContainerScroll } from "@/components/ui/container-scroll-animation";
 import GradientText from "@/components/ui/GradientText";
 import ShinyText from "@/components/ui/ShinyText";
@@ -12,6 +12,11 @@ import RahulIyerImage from "../../../../public/Testimonials/RahulIyer.webp";
 import AnanyaPatelImage from "../../../../public/Testimonials/AnanyaPatel.webp";
 
 export function HeroSection() {
+  const videoSources = {
+    english: "/herovideo.mp4",
+    hindi: "/herovideo.mp4",
+  } as const;
+
   const memberAvatars = [
     PriyaSharmaImage,
     ArjunMehtaImage,
@@ -21,10 +26,14 @@ export function HeroSection() {
   ];
 
   const videoRef = useRef<HTMLVideoElement>(null);
+  const controlsHideTimeoutRef = useRef<ReturnType<typeof setTimeout> | null>(null);
   const [isPlaying, setIsPlaying] = useState(true);
   const [hasSoundStarted, setHasSoundStarted] = useState(false);
+  const [selectedLanguage, setSelectedLanguage] =
+    useState<keyof typeof videoSources>("english");
   const [currentTime, setCurrentTime] = useState(0);
   const [duration, setDuration] = useState(0);
+  const [showControls, setShowControls] = useState(true);
 
   const safePlay = async (video: HTMLVideoElement) => {
     try {
@@ -63,12 +72,84 @@ export function HeroSection() {
     }
   };
 
+  const handleLanguageChange = async (language: keyof typeof videoSources) => {
+    if (language === selectedLanguage) return;
+    const wasSoundMode = hasSoundStarted;
+    setSelectedLanguage(language);
+    setCurrentTime(0);
+    setDuration(0);
+
+    if (!wasSoundMode) return;
+
+    requestAnimationFrame(async () => {
+      const video = videoRef.current;
+      if (!video) return;
+      video.load();
+      video.currentTime = 0;
+      video.muted = false;
+      video.loop = false;
+      const didPlay = await safePlay(video);
+      if (didPlay) {
+        setIsPlaying(true);
+      }
+    });
+  };
+
+  const handleVideoClick = () => {
+    if (!hasSoundStarted) {
+      void togglePlayback();
+    }
+  };
+
   const handleTimelineChange = (value: number) => {
     const video = videoRef.current;
     if (!video) return;
     video.currentTime = value;
     setCurrentTime(value);
   };
+
+  const clearHideControlsTimer = () => {
+    if (controlsHideTimeoutRef.current) {
+      clearTimeout(controlsHideTimeoutRef.current);
+      controlsHideTimeoutRef.current = null;
+    }
+  };
+
+  const scheduleControlsHide = () => {
+    clearHideControlsTimer();
+    controlsHideTimeoutRef.current = setTimeout(() => {
+      setShowControls(false);
+    }, 2000);
+  };
+
+  const revealControlsTemporarily = () => {
+    if (!hasSoundStarted) return;
+    setShowControls(true);
+    if (isPlaying) {
+      scheduleControlsHide();
+    } else {
+      clearHideControlsTimer();
+    }
+  };
+
+  useEffect(() => {
+    if (!hasSoundStarted) {
+      setShowControls(true);
+      clearHideControlsTimer();
+      return;
+    }
+
+    setShowControls(true);
+    if (isPlaying) {
+      scheduleControlsHide();
+    } else {
+      clearHideControlsTimer();
+    }
+
+    return () => {
+      clearHideControlsTimer();
+    };
+  }, [hasSoundStarted, isPlaying]);
 
   const formatTime = (timeInSeconds: number) => {
     const minutes = Math.floor(timeInSeconds / 60);
@@ -141,27 +222,52 @@ export function HeroSection() {
             </div>
           }
         >
-          <div className="group relative h-full w-full">
+          <div
+            className="group relative h-full w-full"
+            onMouseMove={revealControlsTemporarily}
+            onMouseEnter={revealControlsTemporarily}
+            onTouchStart={revealControlsTemporarily}
+          >
             <video
               ref={videoRef}
               className="h-full w-full rounded-2xl object-cover object-center"
               autoPlay
-              muted
-              loop
+              muted={!hasSoundStarted}
+              loop={!hasSoundStarted}
+              controls={hasSoundStarted}
               playsInline
+              preload="metadata"
               poster="https://images.unsplash.com/photo-1455390582262-044cdead277a?auto=format&fit=crop&w=1800&q=80"
               onPlay={() => setIsPlaying(true)}
               onPause={() => setIsPlaying(false)}
               onTimeUpdate={(event) => {
-                setCurrentTime(event.currentTarget.currentTime);
+                const video = event.currentTarget;
+                setCurrentTime(video.currentTime);
+                if (!duration && Number.isFinite(video.duration) && video.duration > 0) {
+                  setDuration(video.duration);
+                }
               }}
               onLoadedMetadata={(event) => {
-                setDuration(event.currentTarget.duration || 0);
+                const loadedDuration = event.currentTarget.duration;
+                setDuration(
+                  Number.isFinite(loadedDuration) && loadedDuration > 0
+                    ? loadedDuration
+                    : 0
+                );
               }}
-              onClick={togglePlayback}
+              onDurationChange={(event) => {
+                const updatedDuration = event.currentTarget.duration;
+                setDuration(
+                  Number.isFinite(updatedDuration) && updatedDuration > 0
+                    ? updatedDuration
+                    : 0
+                );
+              }}
+              onEnded={() => setIsPlaying(false)}
+              onClick={handleVideoClick}
             >
               <source
-                src="https://www.pexels.com/download/video/34630451/"
+                src={videoSources[selectedLanguage]}
                 type="video/mp4"
               />
             </video>
@@ -189,13 +295,43 @@ export function HeroSection() {
             )}
 
             {hasSoundStarted && (
-              <div className="absolute inset-x-4 bottom-4 rounded-xl bg-black/70 p-3 text-white backdrop-blur">
+              <div
+                className={`absolute inset-x-4 bottom-4 rounded-xl bg-black/70 p-3 text-white backdrop-blur transition-opacity duration-200 ${
+                  showControls ? "opacity-100" : "pointer-events-none opacity-0"
+                }`}
+                onMouseMove={revealControlsTemporarily}
+                onTouchStart={revealControlsTemporarily}
+              >
+                <div className="mb-2 flex items-center gap-2">
+                  <button
+                    type="button"
+                    onClick={() => handleLanguageChange("english")}
+                    className={`rounded-md px-2 py-1 text-xs font-medium ${
+                      selectedLanguage === "english"
+                        ? "bg-white text-black"
+                        : "bg-white/10 text-white hover:bg-white/20"
+                    }`}
+                  >
+                    English
+                  </button>
+                  <button
+                    type="button"
+                    onClick={() => handleLanguageChange("hindi")}
+                    className={`rounded-md px-2 py-1 text-xs font-medium ${
+                      selectedLanguage === "hindi"
+                        ? "bg-white text-black"
+                        : "bg-white/10 text-white hover:bg-white/20"
+                    }`}
+                  >
+                    Hindi
+                  </button>
+                </div>
                 <input
                   type="range"
                   min={0}
-                  max={duration || 0}
+                  max={duration > 0 ? duration : 1}
                   step={0.1}
-                  value={Math.min(currentTime, duration || 0)}
+                  value={duration > 0 ? Math.min(currentTime, duration) : 0}
                   onChange={(event) =>
                     handleTimelineChange(Number(event.currentTarget.value))
                   }
