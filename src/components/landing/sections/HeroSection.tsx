@@ -13,10 +13,6 @@ import AnanyaPatelImage from "../../../../public/Testimonials/AnanyaPatel.webp";
 
 export function HeroSection() {
   const TELEGRAM_GROUP_URL = "https://t.me/Quartzfinancial";
-  const videoSources = {
-    english: "/herovideo.mp4",
-    hindi: "/herovideo.mp4",
-  } as const;
 
   const memberAvatars = [
     PriyaSharmaImage,
@@ -30,8 +26,6 @@ export function HeroSection() {
   const controlsHideTimeoutRef = useRef<ReturnType<typeof setTimeout> | null>(null);
   const [isPlaying, setIsPlaying] = useState(true);
   const [hasSoundStarted, setHasSoundStarted] = useState(false);
-  const [selectedLanguage, setSelectedLanguage] =
-    useState<keyof typeof videoSources>("english");
   const [currentTime, setCurrentTime] = useState(0);
   const [duration, setDuration] = useState(0);
   const [showControls, setShowControls] = useState(true);
@@ -71,29 +65,6 @@ export function HeroSection() {
       video.pause();
       setIsPlaying(false);
     }
-  };
-
-  const handleLanguageChange = async (language: keyof typeof videoSources) => {
-    if (language === selectedLanguage) return;
-    const wasSoundMode = hasSoundStarted;
-    setSelectedLanguage(language);
-    setCurrentTime(0);
-    setDuration(0);
-
-    if (!wasSoundMode) return;
-
-    requestAnimationFrame(async () => {
-      const video = videoRef.current;
-      if (!video) return;
-      video.load();
-      video.currentTime = 0;
-      video.muted = false;
-      video.loop = false;
-      const didPlay = await safePlay(video);
-      if (didPlay) {
-        setIsPlaying(true);
-      }
-    });
   };
 
   const handleVideoClick = () => {
@@ -231,14 +202,14 @@ export function HeroSection() {
           >
             <video
               ref={videoRef}
-              className="h-full w-full rounded-2xl object-cover object-center"
+              className="h-full w-full rounded-2xl bg-black object-contain md:object-cover object-center"
               autoPlay
               muted={!hasSoundStarted}
               loop={!hasSoundStarted}
               controls={hasSoundStarted}
               playsInline
               preload="metadata"
-              poster="https://images.unsplash.com/photo-1455390582262-044cdead277a?auto=format&fit=crop&w=1800&q=80"
+              poster="/logo/quartz_dark_logo.webp"
               onPlay={() => setIsPlaying(true)}
               onPause={() => setIsPlaying(false)}
               onTimeUpdate={(event) => {
@@ -268,8 +239,8 @@ export function HeroSection() {
               onClick={handleVideoClick}
             >
               <source
-                src={videoSources[selectedLanguage]}
-                type="video/mp4"
+                src="/quartz_hero.webm"
+                type="video/webm"
               />
             </video>
 
@@ -303,30 +274,6 @@ export function HeroSection() {
                 onMouseMove={revealControlsTemporarily}
                 onTouchStart={revealControlsTemporarily}
               >
-                <div className="mb-2 flex items-center gap-2">
-                  <button
-                    type="button"
-                    onClick={() => handleLanguageChange("english")}
-                    className={`rounded-md px-2 py-1 text-xs font-medium ${
-                      selectedLanguage === "english"
-                        ? "bg-white text-black"
-                        : "bg-white/10 text-white hover:bg-white/20"
-                    }`}
-                  >
-                    English
-                  </button>
-                  <button
-                    type="button"
-                    onClick={() => handleLanguageChange("hindi")}
-                    className={`rounded-md px-2 py-1 text-xs font-medium ${
-                      selectedLanguage === "hindi"
-                        ? "bg-white text-black"
-                        : "bg-white/10 text-white hover:bg-white/20"
-                    }`}
-                  >
-                    Hindi (हिन्दी)
-                  </button>
-                </div>
                 <input
                   type="range"
                   min={0}
