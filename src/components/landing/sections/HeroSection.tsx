@@ -1,25 +1,26 @@
 "use client";
 
-import { useEffect, useRef, useState } from "react";
+import { useCallback, useEffect, useRef, useState } from "react";
 import { ContainerScroll } from "@/components/ui/container-scroll-animation";
 import GradientText from "@/components/ui/GradientText";
 import ShinyText from "@/components/ui/ShinyText";
 import { ShinyButton } from "@/components/ui/shiny-button";
-import PriyaSharmaImage from "../../../../public/Testimonials/PriyaSharma.webp";
-import ArjunMehtaImage from "../../../../public/Testimonials/ArjunMehta.webp";
-import NehaVermaImage from "../../../../public/Testimonials/NehaVerma.webp";
-import RahulIyerImage from "../../../../public/Testimonials/RahulIyer.webp";
-import AnanyaPatelImage from "../../../../public/Testimonials/AnanyaPatel.webp";
+import Image from "next/image";
+const PriyaSharmaImage = "/Testimonials/PriyaSharma.webp";
+const ArjunMehtaImage = "/Testimonials/ArjunMehta.webp";
+const NehaVermaImage = "/Testimonials/NehaVerma.webp";
+const RahulIyerImage = "/Testimonials/RahulIyer.webp";
+const AnanyaPatelImage = "/Testimonials/AnanyaPatel.webp";
 
 export function HeroSection() {
   const TELEGRAM_GROUP_URL = "https://t.me/Quartzfinancial";
 
   const memberAvatars = [
-    PriyaSharmaImage,
-    ArjunMehtaImage,
-    NehaVermaImage,
-    RahulIyerImage,
-    AnanyaPatelImage,
+    { src: PriyaSharmaImage, alt: "Priya Sharma" },
+    { src: ArjunMehtaImage, alt: "Arjun Mehta" },
+    { src: NehaVermaImage, alt: "Neha Verma" },
+    { src: RahulIyerImage, alt: "Rahul Iyer" },
+    { src: AnanyaPatelImage, alt: "Ananya Patel" },
   ];
 
   const videoRef = useRef<HTMLVideoElement>(null);
@@ -80,19 +81,19 @@ export function HeroSection() {
     setCurrentTime(value);
   };
 
-  const clearHideControlsTimer = () => {
+  const clearHideControlsTimer = useCallback(() => {
     if (controlsHideTimeoutRef.current) {
       clearTimeout(controlsHideTimeoutRef.current);
       controlsHideTimeoutRef.current = null;
     }
-  };
+  }, []);
 
-  const scheduleControlsHide = () => {
+  const scheduleControlsHide = useCallback(() => {
     clearHideControlsTimer();
     controlsHideTimeoutRef.current = setTimeout(() => {
       setShowControls(false);
     }, 2000);
-  };
+  }, [clearHideControlsTimer]);
 
   const revealControlsTemporarily = () => {
     if (!hasSoundStarted) return;
@@ -106,12 +107,10 @@ export function HeroSection() {
 
   useEffect(() => {
     if (!hasSoundStarted) {
-      setShowControls(true);
       clearHideControlsTimer();
       return;
     }
 
-    setShowControls(true);
     if (isPlaying) {
       scheduleControlsHide();
     } else {
@@ -121,7 +120,9 @@ export function HeroSection() {
     return () => {
       clearHideControlsTimer();
     };
-  }, [hasSoundStarted, isPlaying]);
+  }, [clearHideControlsTimer, hasSoundStarted, isPlaying, scheduleControlsHide]);
+
+  const areControlsVisible = !isPlaying || showControls;
 
   const formatTime = (timeInSeconds: number) => {
     const minutes = Math.floor(timeInSeconds / 60);
@@ -268,9 +269,8 @@ export function HeroSection() {
 
             {hasSoundStarted && (
               <div
-                className={`absolute inset-x-4 bottom-4 rounded-xl bg-black/70 p-3 text-white backdrop-blur transition-opacity duration-200 ${
-                  showControls ? "opacity-100" : "pointer-events-none opacity-0"
-                }`}
+                className={`absolute inset-x-4 bottom-4 rounded-xl bg-black/70 p-3 text-white backdrop-blur transition-opacity duration-200 ${areControlsVisible ? "opacity-100" : "pointer-events-none opacity-0"
+                  }`}
                 onMouseMove={revealControlsTemporarily}
                 onTouchStart={revealControlsTemporarily}
               >
@@ -308,10 +308,12 @@ export function HeroSection() {
               <div className="flex flex-wrap items-center justify-center gap-3 text-center">
                 <div className="-space-x-2">
                   {memberAvatars.map((avatar, index) => (
-                    <img
+                    <Image
                       key={`member-avatar-${index}`}
+                      width={40}
+                      height={40}
                       src={avatar.src}
-                      alt="Community member"
+                      alt={avatar.alt}
                       className="inline-block h-10 w-10 rounded-full border-2 border-zinc-300 object-cover sm:h-11 sm:w-11"
                       loading="lazy"
                     />
@@ -331,7 +333,7 @@ export function HeroSection() {
                   </GradientText>{" "}
                   members building market clarity with{" "}
                   <a
-                    href="https://www.qf-advisory.com/"
+                    href="https://www.consult.qf-advisory.com/"
                     target="_blank"
                     rel="noreferrer"
                     className=" underline decoration-zinc-400 underline-offset-4 transition hover:text-zinc-900 cursor-pointer"

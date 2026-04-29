@@ -90,9 +90,9 @@ export const Card = ({
       style={{
         rotateX: rotate,
         scale,
-       
+
       }}
-      className="mx-auto mt-2 h-104 w-full max-w-6xl rounded-[30px] border-4 border-[#6C6C6C] bg-[#222222] p-2 shadow-2xl md:mt-6 md:h-160 md:p-6"
+      className="mx-auto mt-2 h-64 w-full max-w-6xl rounded-[30px] border-4 border-[#6C6C6C] bg-[#222222] p-2 shadow-2xl md:mt-6 md:h-160 md:p-6"
     >
       <div className="h-full w-full overflow-hidden rounded-2xl bg-gray-100 md:rounded-2xl md:p-4 dark:bg-zinc-900">
         {children}
