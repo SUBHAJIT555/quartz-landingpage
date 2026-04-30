@@ -128,13 +128,13 @@ export function FooterSection() {
                   For more details, visit our main website:
                 </p>
                 <a
-                  href="https://www.consult.qf-advisory.com/"
+                  href="https://consult.qf-advisory.com/"
                   target="_blank"
                   rel="noreferrer"
                   className="group flex w-fit items-center gap-1  text-zinc-700 transition hover:text-zinc-900"
                 >
-                  <span>www.consult.qf-advisory.com</span>
-                  <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="translate-x-[-3px] opacity-0 transition duration-200 group-hover:translate-x-0 group-hover:opacity-100" aria-hidden="true"><path stroke="none" d="M0 0h24v24H0z" fill="none" /><path d="M5 12h.5m3 0h1.5m3 0h6" /><path d="M13 18l6 -6" /><path d="M13 6l6 6" /></svg>
+                  <span>consult.qf-advisory.com</span>
+                  <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="translate-x-0.75 opacity-0 transition duration-200 group-hover:translate-x-0 group-hover:opacity-100" aria-hidden="true"><path stroke="none" d="M0 0h24v24H0z" fill="none" /><path d="M5 12h.5m3 0h1.5m3 0h6" /><path d="M13 18l6 -6" /><path d="M13 6l6 6" /></svg>
                 </a>
               </div>
             </div>

@@ -333,7 +333,7 @@ export function HeroSection() {
                   </GradientText>{" "}
                   members building market clarity with{" "}
                   <a
-                    href="https://www.consult.qf-advisory.com/"
+                    href="https://consult.qf-advisory.com/"
                     target="_blank"
                     rel="noreferrer"
                     className=" underline decoration-zinc-400 underline-offset-4 transition hover:text-zinc-900 cursor-pointer"
