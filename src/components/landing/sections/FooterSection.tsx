@@ -25,6 +25,9 @@ export function FooterSection() {
                 investors decode macro signals, structure execution, and act
                 with institutional-grade clarity.
               </p>
+              <p className="mt-4 text-xs font-semibold uppercase tracking-[0.14em] text-zinc-700 md:text-sm">
+                Office DUBAI. MUMBAI. CASABLANCA.
+              </p>
 
               {/* <div className="mt-5">
                 <p className="text-xs font-semibold uppercase tracking-[0.14em] text-zinc-700">
@@ -83,7 +86,7 @@ export function FooterSection() {
               </p>
               <div className="mt-1 space-y-2 border-t border-zinc-200 pt-3 text-sm md:text-base text-zinc-600">
                 <a
-                  href="https://www.facebook.com/profile.php?id=61574824925807"
+                  href="https://www.facebook.com/profile.php?id=61578375064590&rdid=3ZYmIVcDXGMCobIe&share_url=https%3A%2F%2Fwww.facebook.com%2Fshare%2F18qKdvkrKh%2F#"
                   target="_blank"
                   rel="noreferrer"
                   className="group flex w-fit items-center gap-1 transition hover:text-zinc-900"
@@ -98,15 +101,6 @@ export function FooterSection() {
                   className="group flex w-fit items-center gap-1 transition hover:text-zinc-900"
                 >
                   <span>Telegram</span>
-                  <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="translate-x-[-3px] opacity-0 transition duration-200 group-hover:translate-x-0 group-hover:opacity-100" aria-hidden="true"><path stroke="none" d="M0 0h24v24H0z" fill="none" /><path d="M5 12h.5m3 0h1.5m3 0h6" /><path d="M13 18l6 -6" /><path d="M13 6l6 6" /></svg>
-                </a>
-                <a
-                  href="https://www.youtube.com/@QuartzFinancialAdvisoryService"
-                  target="_blank"
-                  rel="noreferrer"
-                  className="group flex w-fit items-center gap-1 transition hover:text-zinc-900"
-                >
-                  <span>YouTube</span>
                   <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="translate-x-[-3px] opacity-0 transition duration-200 group-hover:translate-x-0 group-hover:opacity-100" aria-hidden="true"><path stroke="none" d="M0 0h24v24H0z" fill="none" /><path d="M5 12h.5m3 0h1.5m3 0h6" /><path d="M13 18l6 -6" /><path d="M13 6l6 6" /></svg>
                 </a>
               </div>
