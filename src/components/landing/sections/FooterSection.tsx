@@ -26,7 +26,7 @@ export function FooterSection() {
                 with institutional-grade clarity.
               </p>
               <p className="mt-4 text-xs font-semibold uppercase tracking-[0.14em] text-zinc-700 md:text-sm">
-                Office DUBAI. MUMBAI. CASABLANCA.
+                Office : <span className="font-bold">DUBAI. MUMBAI. CASABLANCA.</span>
               </p>
 
               {/* <div className="mt-5">
