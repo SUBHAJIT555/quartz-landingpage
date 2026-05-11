@@ -13,7 +13,7 @@ const RahulIyerImage = "/Testimonials/RahulIyer.webp";
 const AnanyaPatelImage = "/Testimonials/AnanyaPatel.webp";
 
 export function HeroSection() {
-  const TELEGRAM_GROUP_URL = "https://t.me/Quartzfinancial";
+  const TELEGRAM_GROUP_URL = "https://t.me/Quartzeducation";
 
   const memberAvatars = [
     { src: PriyaSharmaImage, alt: "Priya Sharma" },
@@ -331,15 +331,8 @@ export function HeroSection() {
                   >
                     1 Million+
                   </GradientText>{" "}
-                  members building market clarity with{" "}
-                  <a
-                    href="https://consult.qf-advisory.com/"
-                    target="_blank"
-                    rel="noreferrer"
-                    className=" underline decoration-zinc-400 underline-offset-4 transition hover:text-zinc-900 cursor-pointer"
-                  >
-                    Quartz insights
-                  </a>
+                  members building market clarity with Quartz insights.
+                  
                 </p>
               </div>
 

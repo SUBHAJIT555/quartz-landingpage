@@ -8,7 +8,7 @@ import { WhatMembersSaySection } from "@/components/landing/sections/WhatMembers
 import { WhatWeTrackSection } from "@/components/landing/sections/WhatWeTrackSection";
 
 export function LandingPage() {
-  const TELEGRAM_GROUP_URL = "https://t.me/Quartzfinancial";
+  const TELEGRAM_GROUP_URL = "https://t.me/Quartzeducation";
 
   return (
     <main className="min-h-screen bg-white text-zinc-900">

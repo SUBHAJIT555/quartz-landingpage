@@ -14,9 +14,9 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Quartz Financial Advisory | Market Intelligence Community",
+  title: "Quartz Educational Advisory | Market Intelligence Community",
   description:
-    "Real-time market intelligence from geopolitics, macro data, and technical signals delivered daily by Quartz Financial Advisory.",
+    "Real-time market intelligence from geopolitics, macro data, and technical signals delivered daily by Quartz Educational Advisory.",
   icons: {
     icon: "/logo/quartz-icon.ico",
     shortcut: "/logo/quartz-icon.ico",

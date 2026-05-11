@@ -56,7 +56,7 @@ const mobileItemVariants = {
 };
 
 export function LandingNavbar() {
-  const TELEGRAM_GROUP_URL = "https://t.me/Quartzfinancial";
+  const TELEGRAM_GROUP_URL = "https://t.me/Quartzeducation";
   const [open, setOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
 
@@ -93,12 +93,12 @@ export function LandingNavbar() {
           aria-label="Quartz home"
         >
           <Image
-            src="/logo/quartz_dark_logo.webp"
+            src="/logo/quartz_logo_v2.webp"
             alt="Quartz"
             width={140}
             height={32}
             priority
-            className="h-8 w-auto"
+            className="h-10 w-auto"
             style={{ width: "auto" }}
           />
         </Link>

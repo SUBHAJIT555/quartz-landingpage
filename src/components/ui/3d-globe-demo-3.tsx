@@ -67,7 +67,7 @@ const sampleMarkers: GlobeMarker[] = [
 ];
 
 export default function Globe3DDemoThird() {
-  const TELEGRAM_GROUP_URL = "https://t.me/Quartzfinancial";
+  const TELEGRAM_GROUP_URL = "https://t.me/Quartzeducation";
 
   const openTelegramGroup = () => {
     window.open(TELEGRAM_GROUP_URL, "_blank", "noopener,noreferrer");

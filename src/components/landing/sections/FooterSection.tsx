@@ -4,7 +4,7 @@ import { Container } from "@/components/shared/Container";
 import GradientText from "@/components/ui/GradientText";
 
 export function FooterSection() {
-  const TELEGRAM_GROUP_URL = "https://t.me/Quartzfinancial";
+  const TELEGRAM_GROUP_URL = "https://t.me/Quartzeducation";
 
   return (
     <footer className="border-t border-zinc-200 bg-zinc-50/70 py-10 md:py-12">
@@ -13,11 +13,11 @@ export function FooterSection() {
           <div className="grid gap-8 md:grid-cols-[1.35fr_1fr_1fr_1fr] md:gap-6">
             <div>
               <Image
-                src="/logo/quartz_dark_logo.webp"
+                src="/logo/quartz_logo_v2.webp"
                 alt="Quartz"
                 width={150}
                 height={34}
-                className="h-9 w-auto"
+                className="h-10 w-auto"
                 style={{ width: "auto" }}
               />
               <p className="mt-4 md:mt-10 max-w-md text-sm font-medium md:text-base leading-relaxed text-zinc-600">
@@ -118,7 +118,7 @@ export function FooterSection() {
                   <span>advisory@qf-advisory.com</span>
                   <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="translate-x-[-3px] opacity-0 transition duration-200 group-hover:translate-x-0 group-hover:opacity-100" aria-hidden="true"><path stroke="none" d="M0 0h24v24H0z" fill="none" /><path d="M5 12h.5m3 0h1.5m3 0h6" /><path d="M13 18l6 -6" /><path d="M13 6l6 6" /></svg>
                 </a>
-                <p className="border-t border-zinc-200 pt-3 text-sm text-zinc-600 md:text-base">
+                {/* <p className="border-t border-zinc-200 pt-3 text-sm text-zinc-600 md:text-base">
                   For more details, visit our main website:
                 </p>
                 <a
@@ -129,7 +129,7 @@ export function FooterSection() {
                 >
                   <span>consult.qf-advisory.com</span>
                   <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="translate-x-0.75 opacity-0 transition duration-200 group-hover:translate-x-0 group-hover:opacity-100" aria-hidden="true"><path stroke="none" d="M0 0h24v24H0z" fill="none" /><path d="M5 12h.5m3 0h1.5m3 0h6" /><path d="M13 18l6 -6" /><path d="M13 6l6 6" /></svg>
-                </a>
+                </a> */}
               </div>
             </div>
           </div>
@@ -146,11 +146,11 @@ export function FooterSection() {
           >
             Risk Disclosure:
           </GradientText>{" "}
-          Financial markets involve significant risk. Content shared by Quartz Financial Advisory is for informational purposes only and does not constitute financial advice. Please consult a qualified financial adviser before making any investment decisions. Ensure you understand the regulations applicable in your country of residence.
+          Financial markets involve significant risk. Content shared by Quartz Educational Advisory is for informational and educational purposes only and does not constitute financial advice. Please consult a qualified financial adviser before making any investment decisions. Ensure you understand the regulations applicable in your country of residence.
         </div>
 
         <div className="mt-4 border-t border-zinc-200 pt-4 text-center text-xs text-zinc-500 md:text-sm">
-          © {new Date().getFullYear()} Quartz Financial Advisory | All rights reserved. Developed with <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="currentColor" className="inline align-middle mx-0.5 icon icon-tabler icons-tabler-filled icon-tabler-heart"><path stroke="none" d="M0 0h24v24H0z" fill="none" /><path d="M6.979 3.074a6 6 0 0 1 4.988 1.425l.037 .033l.034 -.03a6 6 0 0 1 4.733 -1.44l.246 .036a6 6 0 0 1 3.364 10.008l-.18 .185l-.048 .041l-7.45 7.379a1 1 0 0 1 -1.313 .082l-.094 -.082l-7.493 -7.422a6 6 0 0 1 3.176 -10.215z" /></svg> by <a href="https://subhajit-dhali.vercel.app/" target="_blank" rel="noopener noreferrer" className="underline decoration-zinc-400 underline-offset-4 hover:text-zinc-700 transition">Subhajit</a>
+          © {new Date().getFullYear()} Quartz Educational Advisory | All rights reserved. Developed with <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="currentColor" className="inline align-middle mx-0.5 icon icon-tabler icons-tabler-filled icon-tabler-heart"><path stroke="none" d="M0 0h24v24H0z" fill="none" /><path d="M6.979 3.074a6 6 0 0 1 4.988 1.425l.037 .033l.034 -.03a6 6 0 0 1 4.733 -1.44l.246 .036a6 6 0 0 1 3.364 10.008l-.18 .185l-.048 .041l-7.45 7.379a1 1 0 0 1 -1.313 .082l-.094 -.082l-7.493 -7.422a6 6 0 0 1 3.176 -10.215z" /></svg> by <a href="https://subhajit-dhali.vercel.app/" target="_blank" rel="noopener noreferrer" className="underline decoration-zinc-400 underline-offset-4 hover:text-zinc-700 transition">Subhajit</a>
 
 
         </div>
